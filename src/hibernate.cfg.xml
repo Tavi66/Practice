@@ -8,7 +8,8 @@
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
     <!-- mapping -->
-    <mapping class="domain.Item"/>
-    <mapping class="domain.ItemType"/>
+    <mapping class="domain.Event"/>
+    <mapping class="domain.Exhibition"/>
+    <mapping class="domain.StageEvent"/>
   </session-factory>
 </hibernate-configuration>
