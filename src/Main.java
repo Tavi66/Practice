@@ -12,13 +12,14 @@ public class Main {
 	public static void main(String[] args) throws NumberFormatException, IOException, ParseException {
 		//FILL YOUR CODE
 		System.out.println("Enter item details");
-		//FILL YOUR CODE
+		String[] arr = br.readLine().split(",");
 		System.out.println("Item details");
-		//FILL YOUR CODE
+		ItemBO bo = new ItemBO();
+		List<Item> itemList = bo.list();
 		System.out.printf("%-10s %-15s %-15s %s\n","Id","Name","Category","Price");
 		for(Item item :itemList){
 			System.out.printf("%-10s %-15s %-15s %s\n",item.getId(),item.getName(),item.getCategory(),item.getPrice());
 		}
-		//FILL YOUR CODE
+		//101,Desk,Furnitures,200
 	}
 }

@@ -1,24 +1,31 @@
-package domain;
+package learn.test.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name = "item")
+@Table(name="item")
 public class Item{
 	@Id
-	@Column(name = "id")
+	@Column(name="id")
 	private Integer id;
-	@Column(name = "name")
+	@Column(name="name")
 	private String name;
-	@Column(name = "category")
+	@Column(name="category")
 	private String category;
-	@Column(name = "price")
+	@Column(name="price")
 	private Float price;
 
 	public Item() {
 		super();
+	}
+	
+	public Item(Integer id, String name, String category, Float price) {
+		this.id = id;
+		this.name = name;
+		this.category=category;
+		this.price=price;
 	}
 	public Integer getId() {
 		return id;

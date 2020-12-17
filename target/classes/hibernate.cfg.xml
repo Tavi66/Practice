@@ -3,8 +3,8 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <!-- FILL YOUR CODE -->
+    <mapping class="learn.test.domain.Item"/>
   </session-factory>
 </hibernate-configuration>
