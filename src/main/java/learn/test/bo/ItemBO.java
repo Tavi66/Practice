@@ -7,12 +7,13 @@ import java.util.List;
 public class ItemBO {
 
     ItemDAO dao = new ItemDAO();
-    
-        public void insert(int id,String name,String category,Float price){
-        	dao.insert(id,name,category,price);
-	}
-	
-	public List<Item> list(){
+
+	public List<Item> listItems()
+	{
 		return dao.list();
 	}
+	public Double averagePriceByCategory(String category) 
+	{
+		return dao.averagePriceByCategory(category);
+	}   
 }

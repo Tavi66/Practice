@@ -13,30 +13,15 @@ import learn.test.domain.Item;
 public class ItemDAO {
 	private final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 	Session session;
+	
 	@SuppressWarnings("rawtypes")
-	public void insert(int id,String name,String category,Float price){
+	public Double averagePriceByCategory(String category) {
+		double avg = 0.0;
 		session = sessionFactory.openSession();
-		Transaction transaction = null;
-		try {
-		String hql = "INSERT INTO Item (id,name,category,price) VALUES ("+id+",\""+name+"\",\""+category+"\","+price+")";
-		Query query =session.createQuery(hql);		
-		
-		transaction = session.beginTransaction();
-		
-		query.executeUpdate();
-		
-		transaction.commit();
-		
-		} catch (Exception e) {
-			if(transaction != null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-				
-		}finally {
-			session.close();
-		}
-
+		String hql="SELECT AVG(price) FROM Item WHERE category=\""+category+"\"";
+		Query query = session.createQuery(hql);		
+		avg = (double) query.getResultList().get(0);
+		return avg;
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
