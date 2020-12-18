@@ -5,6 +5,10 @@
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <!-- fill your code here-->
+    <property name="show_sql">true</property>
+    <property name="format_sql">true</property>
+    <!-- mapping -->
+    <mapping class="domain.Doctor"/>
+    <mapping class="domain.User"/>
   </session-factory>
 </hibernate-configuration>
