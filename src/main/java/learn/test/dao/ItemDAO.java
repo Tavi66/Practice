@@ -16,11 +16,19 @@ public class ItemDAO {
 	
 	@SuppressWarnings("rawtypes")
 	public Double averagePriceByCategory(String category) {
-		double avg = 0.0;
 		session = sessionFactory.openSession();
-		String hql="SELECT AVG(price) FROM Item WHERE category=\""+category+"\"";
-		Query query = session.createQuery(hql);		
-		avg = (double) query.getResultList().get(0);
+		//double avg = 0.0;		
+		//String hql="SELECT AVG(price) FROM Item WHERE category=\""+category+"\"";
+		//Query query = session.createQuery(hql);		
+		//avg = (double) query.getResultList().get(0);
+		
+		String hql = "SELECT AVG(price) FROM Item WHERE category = :categoryName group by category ";		
+		
+		Query query = session.createQuery(hql);	
+		query.setParameter("categoryName", category);
+		
+		double avg = query.list().isEmpty() ? 0.0 : (double) query.list().get(0);
+
 		return avg;
 	}
 	
