@@ -47,5 +47,12 @@
         <property name="productDAO" ref="productDAO"/>
     </bean>
 
+    <bean id="loanRequestDAO" class="com.spring.dao.LoanRequestDAO" autowire='byType' scope='singleton'>
+    </bean>
+    
+    <bean id="loanRequestBO" class="com.spring.bo.LoanRequestBO" autowire='byType' scope='singleton'>
+        <property name="loanRequestDAO" ref="loanRequestDAO"/>
+    </bean>
+</beans>
 </beans>
  
