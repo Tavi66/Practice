@@ -1,0 +1,271 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <!-- Fill the code -->
+   <bean id="agent" class="domain.Agent">
+       <constructor-arg value="Bill Hastings"></constructor-arg>
+       	<constructor-arg value="HJD/POD/89"></constructor-arg>
+       	<constructor-arg value="DUB"></constructor-arg>
+       	<constructor-arg value="Dubai, United Arab Emirates"></constructor-arg>
+   </bean>
+
+</beans> 
+
+
+
+
+
+
+
+
+
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <!-- Fill the code -->
+   <bean id="product1" class="domain.Product">
+       	<property name="name" value="Recliner"></property>	
+	   	<property name="color" value="black"></property>
+	   	<property name="city" value="New York"></property>
+	   	<property name="material" value="Foam"></property>
+	   	<property name="rate" value="5000"></property>   
+   </bean>
+   
+   <bean id="product2" class="domain.Product">
+   		<property name="name" value="Designer chair"></property>	
+	   	<property name="color" value="Grey"></property>
+	   	<property name="city" value="New York"></property>
+	   	<property name="material" value="wood"></property>
+	   	<property name="rate" value="1600"></property>   
+   </bean>
+   
+   <bean id="product3" class="domain.Product">
+   		<property name="name" value="Queen Size Beds"></property>	
+	   	<property name="color" value="White"></property>
+	   	<property name="city" value="New York"></property>
+	   	<property name="material" value="Cotton"></property>
+	   	<property name="rate" value="12500"></property>   
+   </bean>  
+   
+</beans> 
+
+
+
+
+
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+   <bean id="privilege1" class="domain.Privilege">
+    <property name="id"><value>1</value></property>
+	<property name="name"><value>Create</value></property>
+   </bean>
+   <bean id="privilege2" class="domain.Privilege">
+	<property name="id"><value>2</value></property>
+	<property name="name"><value>View</value></property>
+   </bean>
+   <bean id="privilege3" class="domain.Privilege">
+	<property name="id"><value>3</value></property>
+	<property name="name"><value>Schedule</value></property>
+   </bean>
+   <bean id="privilege4" class="domain.Privilege">
+	<property name="id"><value>4</value></property>
+	<property name="name"><value>Process</value></property>
+   </bean>
+   <bean id="privilege5" class="domain.Privilege">
+	<property name="id"><value>5</value></property>
+	<property name="name"><value>Cancel</value></property>
+   </bean>
+   
+   <bean id="role1" class="domain.Role">
+   	<property name="id"><value>1</value></property>
+   	<property name="name"><value>Admin</value></property>
+   	<property name="description"><value>The Administrator of the Shipment System.</value></property>
+   	<property name="privileges">
+   	<list>
+   		<ref bean="privilege1"/>
+   		<ref bean="privilege2"/>
+   		<ref bean="privilege3"/>
+   		<ref bean="privilege4"/>
+   		<ref bean="privilege5"/>
+   	</list>
+   	</property>
+   </bean>
+   <bean id="role2" class="domain.Role">
+   	<property name="id"><value>2</value></property>
+   	<property name="name"><value>Agent</value></property>
+   	<property name="description"><value>A person who acts on behalf of company.</value></property>
+   	<property name="privileges">
+   	<list>
+   		<ref bean="privilege2"/>
+   		<ref bean="privilege3"/>
+   		<ref bean="privilege4"/>
+   	</list>
+   	</property>
+   </bean>
+   <bean id="role3" class="domain.Role">
+   	<property name="id"><value>3</value></property>
+   	<property name="name"><value>Shipper</value></property>
+   	<property name="description"><value>A person who transports or receives goods.</value></property>
+   	<property name="privileges">
+   	<list>
+   		<ref bean="privilege2"/>
+   		<ref bean="privilege4"/>
+   	</list>
+   	</property>
+   </bean>
+   <bean id="role4" class="domain.Role">
+   	<property name="id"><value>4</value></property>
+   	<property name="name"><value>Customer</value></property>
+   	<property name="description"><value>A person who receives or transports in a company.</value></property>
+   	<property name="privileges">
+   	<list>
+   		<ref bean="privilege1"/>
+   		<ref bean="privilege2"/>
+   		<ref bean="privilege5"/>
+   	</list>
+   	</property>
+   </bean>
+</beans> 
+
+
+
+
+
+
+
+
+
+
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!--Fill your code here-->
+	
+		<bean id="role1" class="domain.Role">
+			<constructor-arg value="Customer" />
+			<constructor-arg value="1" />
+		</bean>
+	
+	
+	<bean id="role2" class="domain.Role">
+		<constructor-arg value="Manager" />
+		<constructor-arg value="1" />
+	</bean>
+
+	<!--Fill your code here-->
+	
+		<bean id="user1" class="domain.User">
+			<constructor-arg value="Clay" />
+			<constructor-arg value="Jenson" />
+			<constructor-arg value="7896541230" />
+			<constructor-arg value="Clay@gmail.com" />
+			<constructor-arg value="Clay Jenson" />
+			<constructor-arg value="Cl@Y" />
+			<constructor-arg ref="role1" />
+		</bean>
+	
+		<bean id="user2" class="domain.User">
+			<constructor-arg value="Tony" />
+			<constructor-arg value="Jin" />
+			<constructor-arg value="9874563210" />
+			<constructor-arg value="Tonyy@gmail.com" />
+			<constructor-arg value="Tony Jin" />
+			<constructor-arg value="Tony" />
+			<constructor-arg ref="role1" />
+		</bean>
+	
+		<bean id="user3" class="domain.User">
+			<constructor-arg value="Hannah" />
+			<constructor-arg value="Baker" />
+			<constructor-arg value="8523697410" />
+			<constructor-arg value="hannah@gmail.com" />
+			<constructor-arg value="Hannah Baker" />
+			<constructor-arg value="Hannah" />
+			<constructor-arg ref="role1" />
+		</bean>
+	
+		<bean id="user4" class="domain.User">
+			<constructor-arg value="Tim	" />
+			<constructor-arg value="Cena" />
+			<constructor-arg value="9856320147" />
+			<constructor-arg value="Timcena@gmail.com" />
+			<constructor-arg value="Tim Cena" />
+			<constructor-arg value="Tim" />
+			<constructor-arg ref="role2" />
+		</bean>
+
+		<bean id="user5" class="domain.User">
+			<constructor-arg value="Sara" />
+			<constructor-arg value="K" />
+			<constructor-arg value="8523695145" />
+			<constructor-arg value="Sara@gmail.com" />
+			<constructor-arg value="Sara K" />
+			<constructor-arg value="Sara" />
+			<constructor-arg ref="role2" />
+		</bean>
+	
+		<bean id="user6" class="domain.User">
+			<constructor-arg value="Lara" />
+			<constructor-arg value="R" />
+			<constructor-arg value="7896523014" />
+			<constructor-arg value="Lara@gmail.com" />
+			<constructor-arg value="Lara K" />
+			<constructor-arg value="Lara" />
+			<constructor-arg ref="role2" />
+		</bean>
+</beans>
+
+
+
+
+
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+         <!--Fill your code here-->
+            
+            <bean id="loanRequestDao" class="com.spring.dao.LoanRequestDAO" scope="singleton" >
+            </bean>
+            
+            <bean id="loanRequestBo" class="com.spring.bo.LoanRequestBO" scope="singleton" >
+				<property name="loanRequestDao" ref="loanRequestDao"></property>            
+            </bean>
+        
+</beans>
